@@ -1,0 +1,21 @@
+/*标题栏背景变成黑色*/
+
+.mui-bar-nav{
+
+	background-color: #000000; 
+
+}
+
+/*标题栏文字变成白色*/
+
+.mui-title{
+
+	color: white;
+
+}
+
+.mui-active .mui-tab-label,.mui-active  .mui-icon{
+
+	color:#46C01B;
+
+}
