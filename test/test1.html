@@ -38,6 +38,9 @@
 			<button id="openImages" type="button" class="mui-btn mui-btn-grey">打开多张图片</button>
 			<button id="captureImage" type="button" class="mui-btn mui-btn-red">拍照</button>
 			<button id="startVideo" type="button" class="mui-btn mui-btn-purple">摄像</button>
+			<button id="G-sensor" type="button" class="mui-btn mui-btn-blue">重力感应</button>
+			<button id="openContacts" type="button" class="mui-btn mui-btn-yellow">通讯录</button>
+			<div id="vide"></div>
 			<div id="showIamge"></div>
 			<div id ="showVideo"></div>
 			
@@ -116,6 +119,26 @@ mui.plusReady(function () {
 		);
 	})//startVideo-EventListener
 	
+	//重力感应
+	document.getElementById("G-sensor").addEventListener("tap",function(){
+		plus.accelerometer.watchAcceleration(function(a){
+			var msg = document.getElementById("vide");
+			msg.innerText="X: " + a.xAxis + "\n Y: " + a.yAxis + "\n Z: " + a.zAxis;
+		})
+	})
+	//通讯录
+	document.getElementById("openContacts").addEventListener("tap",function(){
+		plus.contacts.getAddressBook(plus.contacts.ADDRESSBOOK_PHONE, function (addressbook) {
+			addressbook.find(["displayName","phoneNumbers"],function(contacts){
+				mui.toast(contacts.length);
+			},function(){
+				mui.toast("error");
+			},
+			{multiple:true},);
+		},function(e){
+			mui.toast("Get address book failed: " + e.message);
+		});
+	});
 	
 })//plusReady
 </script>

@@ -19,25 +19,49 @@
 						contentover:'释放立即刷新',
 						contentrefresh:'正在刷新...',
 						callback:pulldownRefresh
+					},
+					up:{
+						callback:pullupRefresh
 					}
 				}
 			});
+			
 			function pulldownRefresh(){
 				setTimeout(function(){
 					var table=document.querySelector(".mui-table-view");
 					for(var i = 0; i < 3; i++){
 						var li=document.createElement("li");
 						li.className="mui-table-view-cell mui-media";
-						var str="<img class='mui-media-object mui-pull-left' src='../img/didi.png'>";
-						var str="<div class='mui-media-body'>";
-						var str="幸福";
-						var str="<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>";
-						var str="</div>";
+						var str ="";
+						str+="<img class='mui-media-object mui-pull-left' src='../img/didi.png'>";
+						str+="<div class='mui-media-body'>";
+						str+="幸福";
+						str+="<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>";
+						str+="</div>";
 						li.innerHTML=str;
 						table.insertBefore(li,table.firstChild);
 					}
 				mui("#refreshContainer").pullRefresh().endPulldownToRefresh();
-				},1500);
+				},500);
+			}
+			
+			function pullupRefresh(){
+				setTimeout(function(){
+					var table=document.querySelector(".mui-table-view");
+					for(var i = 0; i < 3; i++){
+						var li=document.createElement("li");
+						li.className="mui-table-view-cell mui-media";
+						var str ="";
+						str+="<img class='mui-media-object mui-pull-left' src='../img/afe.png'>";
+						str+="<div class='mui-media-body'>";
+						str+="幸福";
+						str+="<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>";
+						str+="</div>";
+						li.innerHTML=str;
+						table.appendChild(li);
+					}
+				mui("#refreshContainer").pullRefresh().endPullupToRefresh();
+				},400);
 			}
 		</script>
 		

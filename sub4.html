@@ -1,33 +1,111 @@
 <!doctype html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="css/mui.css" rel="stylesheet" />
-		
-	</head>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="css/mui.css" rel="stylesheet" />
+	
+</head>
 
-	<body>
-		<script src="js/mui.js"></script>
-		<script type="text/javascript">
-			mui.init()
-		</script>
-		
-		<div class="mui-content">
-			<div class="mui-card">
-				<!--页眉，放置标题-->
-				<div class="mui-card-header">页眉</div>
-				<!--内容区-->
-				<div class="mui-card-content">
-					<img style="width: 100%" src="img/1.jpg" >
-					<img style="width: 100%" src="img/2.jpg" >
-					<img style="width: 100%" src="img/3.jpg" >
+<body>
+<script src="js/mui.js"></script>
+<script type="text/javascript">
+	mui.init()
+</script>
+	
+<div class="mui-content">
+	<ul class="mui-table-view">
+		<li class="mui-table-view-cell mui-media">
+			<a href="javascript:;" id="my">
+				<img class="mui-media-object mui-pull-left" src="img/q2.jpg">
+				<div class="mui-media-body">
+					ABC
+					<p class="mui-ellipsis">怎么办？</p>
 				</div>
-				<!--页脚，放置补充信息或支持的操作-->
-				<div class="mui-card-footer">页脚</div>
-			</div>
-		</div>
-	</body>
+			</a>
+		</li>
+	</ul>
+	
+	<div id="" style="height: 15px;"></div>
+	
+	<ul class="mui-table-view">
+		<li class="mui-table-view-cell mui-media">
+			<a href="javascript:;" id="test">
+				<img class="mui-media-object mui-pull-left" style="height: 25px;width: 27px;" src="img/qianbao.png"">
+				<div style="padding: 3px;" class="mui-media-body">钱包</div>
+			</a>
+		</li>
+	</ul>
+	
+	<div id="" style="height: 15px;"></div>
+	
+	<ul class="mui-table-view">
+		<li class="mui-table-view-cell mui-media">
+			<a href="javascript:;" id="test">
+				<img class="mui-media-object mui-pull-left" style="height: 25px;width: 27px;" src="img/shoucang.png"">
+				<div style="padding: 3px;" class="mui-media-body">收藏</div>
+			</a>
+		</li>
+	</ul>
+	<ul class="mui-table-view">
+		<li class="mui-table-view-cell mui-media">
+			<a href="javascript:;" id="test">
+				<img class="mui-media-object mui-pull-left" style="height: 25px;width: 27px;" src="img/xiangce.png"">
+				<div style="padding: 3px;" class="mui-media-body">相册</div>
+			</a>
+		</li>
+	</ul>
+	<ul class="mui-table-view">
+		<li class="mui-table-view-cell mui-media">
+			<a href="javascript:;" id="test">
+				<img class="mui-media-object mui-pull-left" style="height: 25px;width: 27px;" src="img/kabao.png"">
+				<div style="padding: 3px;" class="mui-media-body">卡包</div>
+			</a>
+		</li>
+	</ul>
+	<ul class="mui-table-view">
+		<li class="mui-table-view-cell mui-media">
+			<a href="javascript:;" id="test">
+				<img class="mui-media-object mui-pull-left" style="height: 25px;width: 27px;" src="img/biaoqing.png"">
+				<div style="padding: 3px;" class="mui-media-body">表情</div>
+			</a>
+		</li>
+	</ul>
+	
+	<div id="" style="height: 15px;"></div>
+	
+	<ul class="mui-table-view">
+		<li class="mui-table-view-cell mui-media">
+			<a href="javascript:;" id="test">
+				<img class="mui-media-object mui-pull-left" style="height: 25px;width: 27px;" src="img/shezhi.png">
+				<div style="padding: 3px;" class="mui-media-body">设置
+				<span class="mui-badge mui-badge-red">New</span>
+				</div>
+			</a>
+		</li>
+	</ul>
+</div>
+</body>
+<script type="text/javascript">
+document.getElementById("my").addEventListener("tap",function(){
+	mui.openWindow({
+		url:"./login/login.html",
+		id:"login.html",
+		show:{
+			autoShow:true,
+			aniShow:"slide-in-right",//页面显示动画，默认为”slide-in-right“；
+			duration:200,//页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+		},
+		waiting:{
+			autoShow:true,//自动显示等待框，默认为true
+			title:'正在加载...',//等待对话框上显示的提示内容
+		},
+		extras:{
+				
+		}
+	})
+});
+</script>
 </html>

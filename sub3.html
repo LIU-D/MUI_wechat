@@ -41,7 +41,7 @@
 			
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
+					<a href="javascript:;" id="scan">
 						<img class="mui-media-object mui-pull-left" src="img/afg.png">
 						<div class="mui-media-body"><p class="mui-ellipsis">扫一扫</p></div>
 					</a>
@@ -50,7 +50,7 @@
 				
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
+					<a href="javascript:;" id="shake">
 						<img class="mui-media-object mui-pull-left" src="img/afh.png">
 						<div class="mui-media-body"><p class="mui-ellipsis">摇一摇</p></div>
 					</a>
@@ -60,7 +60,7 @@
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell mui-media">
 					<a href="javascript:;" id="test">
-						<img class="mui-media-object mui-pull-left" style="height: 36px;padding-left: 10px;padding-top: 6px;" src="img/test.png">
+						<img class="mui-media-object mui-pull-left" src="img/shezhi.png">
 						<div class="mui-media-body"><p class="mui-ellipsis">测试页面</p></div>
 					</a>
 				</li>
@@ -97,9 +97,21 @@ document.getElementById("moments_header").addEventListener("tap",function(){
 	})
 });
 
+//摇一摇监听事件
+document.getElementById("shake").addEventListener("tap",function(){
+	mui.openWindow({
+		url:'plus/accelerometer_shake.html',
+		id:'shake.html',
+	})
+});
 
-
-
+//扫一扫监听事件
+document.getElementById("scan").addEventListener("tap",function(){
+	mui.openWindow({
+		url:'plus/barcode_scan.html',
+		id:'scan.html',
+	})
+});
 
 
 

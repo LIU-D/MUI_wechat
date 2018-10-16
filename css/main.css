@@ -2,14 +2,13 @@
 
 .mui-bar-nav{
 
-	background-color: #000000; 
-
+	background-color: #303030; 
 }
 
 /*标题栏文字变成白色*/
 
 .mui-title{
-
+	text-align: left;
 	color: white;
 
 }

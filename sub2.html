@@ -25,14 +25,14 @@
 			.mui-indexed-list-bar{
 				background-color: white;
 			}
-			
+			.mui-indexed-list{
+				margin-top: -40px;
+			}
 		</style>
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title">通讯录列表</h1>
 		</header>
 		<div class="mui-content">
 			<div id='list' class="mui-indexed-list">
@@ -263,7 +263,7 @@
 				var header = document.querySelector('header.mui-bar');
 				var list = document.getElementById('list');
 				//calc hieght
-				list.style.height = (document.body.offsetHeight - header.offsetHeight) + 'px';
+				list.style.height = (document.body.offsetHeight - header.offsetHeight) + 40 + 'px';
 				//create
 				window.indexedList = new mui.IndexedList(list);
 			});

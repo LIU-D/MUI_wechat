@@ -12,12 +12,15 @@
 		<script src="../js/mui.js"></script>
 		<script type="text/javascript">
 			mui.init({
+				gestureConfig:{
+					doubletap:true
+				},
 				subpages:[{
 				url:"moments_list.html",//子页面HTML地址，支持本地地址和网络地址
 				id:"moments_list.html",//子页面标志
 				styles:{
 					top:"44px",//子页面顶部位置
-					bottom:"50px",//子页面底部位置
+					bottom:"0px",//子页面底部位置
 				},
 				extras:{}//额外扩展参数
 				}]
@@ -27,4 +30,18 @@
 			<h1 class="mui-title">朋友圈</h1>
 		</header>
 	</body>
+<script type="text/javascript">
+mui.plusReady(function(){
+	var contentWebview = null;
+	//监听标题栏双击事件
+	document.querySelector('header').addEventListener('doubletap',function(){
+		if(contentWebview == null){
+			contentWebview = plus.webview.currentWebview().children()[0];
+			console.log(contentWebview);
+		}
+		//内容区滚动到顶部
+		contentWebview.evalJS("mui('#refreshContainer').pullRefresh().scrollTo(0,0,100)");
+	});
+});
+</script>
 </html>
