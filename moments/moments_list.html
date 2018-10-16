@@ -28,18 +28,31 @@
 			
 			function pulldownRefresh(){
 				setTimeout(function(){
-					var table=document.querySelector(".mui-table-view");
-					for(var i = 0; i < 3; i++){
-						var li=document.createElement("li");
-						li.className="mui-table-view-cell mui-media";
+					var cardtable=document.getElementById("card-content");
+					for(var i = 0; i < 1; i++){
+						var divcard=document.createElement("div");
+						divcard.className="mui-card";
 						var str ="";
-						str+="<img class='mui-media-object mui-pull-left' src='../img/didi.png'>";
+						str+="<div class='mui-card-header mui-card-media'>";
+						str+="<img src='../img/q4.jpg' />";
 						str+="<div class='mui-media-body'>";
-						str+="幸福";
-						str+="<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>";
+						str+="阿清";
+						str+="<p>幸福在于为别人生活。</p>";
 						str+="</div>";
-						li.innerHTML=str;
-						table.insertBefore(li,table.firstChild);
+						str+="</div>";
+						str+="<div class='mui-card-content'>";
+						str+="<div class='mui-card-content-inner'>";
+						str+="<p>Posted on January 23, 2018</p>";
+						str+="<p style='color: #333;'>岩前古庙枕寒流，落目荒烟锁废丘。白鹤丛中深岁月，绿芜台下自春秋。竹摇青佩疑闻语，鸟弄余音似诉愁。鸡犬不通人迹少，闲花野蔓绕墙头。</p>";
+						str+="</div>";		
+						str+="</div>";	
+						str+="<div class='mui-card-footer'>";	
+						str+="<a class='mui-card-link'>Like</a>";		
+						str+="<a class='mui-card-link'>Comment</a>";		
+						str+="<a class='mui-card-link'>Read more</a>";		
+						str+="</div>";
+						divcard.innerHTML=str;
+						cardtable.insertBefore(divcard,cardtable.firstChild);
 					}
 				mui("#refreshContainer").pullRefresh().endPulldownToRefresh();
 				},500);
@@ -47,18 +60,31 @@
 			
 			function pullupRefresh(){
 				setTimeout(function(){
-					var table=document.querySelector(".mui-table-view");
-					for(var i = 0; i < 3; i++){
-						var li=document.createElement("li");
-						li.className="mui-table-view-cell mui-media";
+					var cardtable=document.getElementById("card-content");
+					for(var i = 0; i < 1; i++){
+						var divcard=document.createElement("div");
+						divcard.className="mui-card";
 						var str ="";
-						str+="<img class='mui-media-object mui-pull-left' src='../img/afe.png'>";
+						str+="<div class='mui-card-header mui-card-media'>";
+						str+="<img src='../img/q1.jpg' />";
 						str+="<div class='mui-media-body'>";
-						str+="幸福";
-						str+="<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>";
+						str+="阿青";
+						str+="<p>再不甘于平庸。</p>";
 						str+="</div>";
-						li.innerHTML=str;
-						table.appendChild(li);
+						str+="</div>";
+						str+="<div class='mui-card-content'>";
+						str+="<img src='../img/2.jpg' alt='' width='100%'/>";
+						str+="<div class='mui-card-content-inner'>";
+						str+="<p>Posted on January 10, 2018</p>";
+						str+="</div>";		
+						str+="</div>";	
+						str+="<div class='mui-card-footer'>";	
+						str+="<a class='mui-card-link'>Like</a>";		
+						str+="<a class='mui-card-link'>Comment</a>";		
+						str+="<a class='mui-card-link'>Read more</a>";		
+						str+="</div>";
+						divcard.innerHTML=str;
+						cardtable.appendChild(divcard);
 					}
 				mui("#refreshContainer").pullRefresh().endPullupToRefresh();
 				},400);
@@ -72,79 +98,83 @@
 			<!-- 轮播 -->
 			<div id="slider" class="mui-slider" >
 			  <div class="mui-slider-group mui-slider-loop">
-				<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-				<div class="mui-slider-item mui-slider-item-duplicate">
-				  <a href="#">
-					<img src="../img/3.jpg">
-				  </a>
-				</div>
 				<!-- 第一张 -->
 				<div class="mui-slider-item">
 				  <a href="#">
 					<img src="../img/1.jpg">
 				  </a>
 				</div>
-				<!-- 第二张 -->
-				<div class="mui-slider-item">
-				  <a href="#">
-					<img src="../img/2.jpg">
-				  </a>
-				</div>
-				<!-- 第三张 -->
-				<div class="mui-slider-item">
-				  <a href="#">
-					<img src="../img/3.jpg">
-				  </a>
-				</div>
-				<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-				<div class="mui-slider-item mui-slider-item-duplicate">
-				  <a href="#">
-					<img src="../img/1.jpg">
-				  </a>
-				</div>
-			  </div>
-			  <div class="mui-slider-indicator">
-				<div class="mui-indicator mui-active"></div>
-				<div class="mui-indicator"></div>
-				<div class="mui-indicator"></div>
 			  </div>
 			</div>
 			
 			<!--数据列表-->
-			<ul class="mui-table-view mui-table-view-chevron">
-					<li class="mui-table-view-cell mui-media">
-						<a href="javascript:;">
-							<img class="mui-media-object mui-pull-left" src="../img/didi.png">
-							<div class="mui-media-body">
-								幸福
-								<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
-							</div>
-						</a>
-					</li>
-					<li class="mui-table-view-cell mui-media">
-						<a href="javascript:;">
-							<img class="mui-media-object mui-pull-left" src="../img/jd.png">
-							<div class="mui-media-body">
-								木屋
-								<p class="mui-ellipsis">想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
-							</div>
-						</a>
-					</li>
-					<li class="mui-table-view-cell mui-media">
-						<a href="javascript:;">
-							<img class="mui-media-object mui-pull-left" src="../img/lct.png">
-							<div class="mui-media-body">
-									CBD
-								<p class="mui-ellipsis">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
-							</div>
-						</a>
-					</li>
-			</ul>
-			
-			
-			
-			
+			<div id="card-content">
+			<!-- 第一个card -->
+			<div class="mui-card">
+				<div class="mui-card-header mui-card-media">
+					<img src="../img/q4.jpg" />
+					<div class="mui-media-body">
+						阿清
+						<p>人生的路漫长而多彩。</p>
+					</div>
+				</div>
+				<div class="mui-card-content" >
+					<div class="mui-card-content-inner">
+						<p>Posted on January 19, 2018</p>
+						<p style="color: #333;">不知道是往前走呢，还是已经站住了，心中只觉得一浪一浪的波动，似一片波动的黑海，黑暗与心接成一气，都渺茫，都起落，都恍惚。</p>
+					</div>
+				</div>
+				<div class="mui-card-footer">
+					<a class="mui-card-link">Like</a>
+					<a class="mui-card-link">Comment</a>
+					<a class="mui-card-link">Read more</a>
+				</div>
+			</div>	
+			<!-- 第二个card -->
+			<div class="mui-card">
+				<div class="mui-card-header mui-card-media">
+					<img src="../img/q3.jpg" />
+					<div class="mui-media-body">
+						小M
+						<p>幸福在于为别人生活。</p>
+					</div>
+				</div>
+				<div class="mui-card-content" >
+					<img src="../img/3.jpg" alt="" width="100%"/>
+					<div class="mui-card-content-inner">
+						<p>Posted on January 18, 2018</p>
+						<p style="color: #333;">如欲采蜜，勿僦蜂房。 尽量去了解别人，而不要用责骂的方式；尽量设身处地地去想——他们为什么要这样做。这比起批评责怪要有益有趣得多，而且让人心生同情，忍耐和仁慈。</p>
+					</div>
+				</div>
+				<div class="mui-card-footer">
+					<a class="mui-card-link">Like</a>
+					<a class="mui-card-link">Comment</a>
+					<a class="mui-card-link">Read more</a>
+				</div>
 			</div>
+			<!-- 第三个card -->
+			<div class="mui-card">
+				<div class="mui-card-header mui-card-media">
+					<img src="../img/q4.jpg" />
+					<div class="mui-media-body">
+						阿清
+						<p>人生的路漫长而多彩。</p>
+					</div>
+				</div>
+				<div class="mui-card-content" >
+					<div class="mui-card-content-inner">
+						<p>Posted on January 19, 2018</p>
+						<img src="../img/v2-24e7164f488f097f36ca7d7655ceef9e_b.jpg"alt="" width="100%" />
+						<p style="color: #333;">不知道是往前走呢，还是已经站住了，心中只觉得一浪一浪的波动，似一片波动的黑海，黑暗与心接成一气，都渺茫，都起落，都恍惚。</p>
+					</div>
+				</div>
+				<div class="mui-card-footer">
+					<a class="mui-card-link">Like</a>
+					<a class="mui-card-link">Comment</a>
+					<a class="mui-card-link">Read more</a>
+				</div>
+			</div>	
+			</div><!-- card -->
 	</body>
 
 </html>
